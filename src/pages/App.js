@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
+import React , {Component} from 'react';
+
 import publicRoutes from '../routes/publicRoutes'
 import {
   BrowserRouter ,
@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 
 class App extends Component {
-  return (
+  publicRoute = (route,index) => { 
+  return (  
     <Route
     key ={index}
     path ={route.path}
@@ -21,23 +22,14 @@ class App extends Component {
 };
 
 render (){
-return {
+return ( 
 <BrowserRouter>
 <switch>
-{publicRoutes.map((route,index)=> this.publicRouter(route ,index))}
-
+{publicRoutes.map((route,index)=> this.publicRoute(route ,index))}
 </switch>
-
-
-
 </BrowserRouter>
-
-
-};
-
+);
  }
-
-
 }
 
 export default App;

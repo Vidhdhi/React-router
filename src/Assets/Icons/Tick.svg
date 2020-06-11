@@ -1,0 +1,10 @@
+<svg id="Tick" xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74">
+  <g id="Base" fill="#fff" stroke="#26a69a" stroke-width="2">
+    <circle cx="37" cy="37" r="37" stroke="none"/>
+    <circle cx="37" cy="37" r="36" fill="none"/>
+  </g>
+  <g id="Tick-2" data-name="Tick" transform="translate(24.05 27.75)">
+    <line id="Line_322" data-name="Line 322" x2="9.044" y2="9.044" transform="translate(0 11.306)" fill="none" stroke="#4db6ac" stroke-linecap="round" stroke-width="4"/>
+    <line id="Line_323" data-name="Line 323" y1="20.35" x2="18.089" transform="translate(9.044)" fill="none" stroke="#4db6ac" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>
