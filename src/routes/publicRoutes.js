@@ -1,7 +1,7 @@
-import welcome from "../pages/welcome";
+import welcome from "../pages/setprofile";
 import login from "../pages/login";
-import Mysignup from "../components/elements/signup";
-import Myprofile from "../components/elements/profilepic"
+import Signup from "../pages/signup";
+import Myprofile from "../pages/setprofile"
 const publicRouter =[ 
 {
 path:"/",
@@ -15,7 +15,7 @@ exact:true,
 },
 {
     path:"/signup",
-    component:Mysignup ,
+    component: Signup,
          exact:true,
 },
 {

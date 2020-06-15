@@ -11,12 +11,10 @@ class Myprofile extends React.Component {
 
 render() {  
    return (  
-    <Grid container item xs={12}>
-    <Grid item xs={6}> 
- <Mycontent1 />
-</Grid>
+  
 
-      <Grid item xs={6} 
+
+      <Grid 
          container  
         
          spacing={0}  
@@ -35,9 +33,10 @@ render() {
       >
         Upload
       </Button>
+      <br></br>
    <Button variant="contained" disabled></Button>
   </Grid> 
-  </Grid> 
+  
   
   );  
  }    

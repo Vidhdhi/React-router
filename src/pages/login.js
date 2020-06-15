@@ -1,24 +1,22 @@
-import React, {Component}from "react";
-import FullWidthGrid from "./signup";
-import Publiclayout from "../components/Layouts/publiclayouts";
-import { Button } from "@material-ui/core";
-class login extends React.Component {
-   constructor(props){
-    super(props);
-  this.state={name:"doli"}
-   }
-  
- render(){
-    return (
-
-<Publiclayout>
-<Button variant="contained" color="primary">hello bae</Button>
+import React from 'react';
+import { Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Myform from '../components/elements/form.js'
+import Mycontent from '../components/elements/content.js'
 
 
-</Publiclayout>
 
-
-)
- }
- }   
-export default login;
+ 
+function Login(props) {
+  return(
+<Grid container item xs={12}>
+    <Grid item xs={6}> <Mycontent/>
+</Grid>
+<Grid item xs={6}>
+   <Myform/>
+</Grid>
+</Grid>
+  );
+}
+ 
+export default Login;
