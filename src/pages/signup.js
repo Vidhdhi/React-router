@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({  
     root: {
         flexGrow: 1,
     },
@@ -28,28 +28,7 @@ export default function FullWidthGrid() {
         <p className ="test">Large volumes of diverse data systematically categorized based on distinct criteria<br></br> for easy and effective filtering of the necessary information.</p></Paper>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paper}> <form   >
-      
-      <p>Username</p>
-      <input
-      className='size'
-        type='text'
-        name='username'
-        placeholder ='Place holder'
-        
-      />
-      <p>Password</p>
-      <input
-      className='size1'
-        type='text'
-        name='age'
-        placeholder ='Typed text'
-        
-      />
-      
-      <p>Forgot password? RESET</p>
-      <button className ="btn">SIGN in</button>
-      </form></Paper>
+                    <Paper className={classes.paper}> </Paper>
                 </Grid>
                 
             </Grid>
