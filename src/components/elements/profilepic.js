@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';  
 import Avatar from '@material-ui/core/Avatar';
 import Mycontent1 from './conent3.js';
-import PhotoCamera from '../../Assets/camera.png';
+
 class Myprofile extends React.Component {  
    handleLogin = () => {  
    alert("Login form example using MATERIAL UI");  
@@ -31,7 +31,7 @@ render() {
         variant="contained"
         color="default"
        
-        startIcon={<PhotoCamera />}
+        
       >
         Upload
       </Button>
