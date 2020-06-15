@@ -1,6 +1,7 @@
 import welcome from "../pages/welcome";
 import login from "../pages/login";
 import Mysignup from "../components/elements/signup";
+import Myprofile from "../components/elements/profilepic"
 const publicRouter =[ 
 {
 path:"/",
@@ -15,6 +16,11 @@ exact:true,
 {
     path:"/signup",
     component:Mysignup ,
+         exact:true,
+},
+{
+    path:"/setprofile",
+    component:Myprofile ,
          exact:true,
 },
 ];

@@ -1,17 +1,21 @@
 import React from 'react';  
-import Button from '@material-ui/core/Button';  
-import TextField from '@material-ui/core/TextField';  
+import Button from '@material-ui/core/Button';    
 import Grid from '@material-ui/core/Grid';  
-import Typography from '@material-ui/core/Typography';  
-import logo from '../../Assets/namecheap.png'; 
+import Avatar from '@material-ui/core/Avatar';
+import Mycontent1 from './conent3.js';
 
-class Myform extends React.Component {  
+class Myprofile extends React.Component {  
    handleLogin = () => {  
    alert("Login form example using MATERIAL UI");  
 }  
 render() {  
    return (  
-      <Grid  
+    <Grid container item xs={12}>
+    <Grid item xs={6}> 
+ <Mycontent1 />
+</Grid>
+
+      <Grid item xs={6} 
          container  
         
          spacing={0}  
@@ -21,36 +25,12 @@ render() {
          style={{ minHeight: '100vh' }}  
          >  
  
- <img src={logo} className="App-logo" alt="logo" />
-   <form onSubmit={this.handleLogin}>  
-   <label>Username</label>
-   <TextField  
-      variant="outlined"  
-      margin="normal"  
-      fullWidth  
-      label="Place holder"  
-   />  
- <label>Password</label>
-   <TextField  
-      variant="outlined"  
-      margin="normal"  
-      fullWidth  
-      label="Typed text"  
-      type="password"  
-   />  
-   <p>Forgot password? RESET</p>
-   <Button  
-      type="submit"  
-      fullWidth  
-      variant="contained"  
-      color="primary"  
-      >  
-     SIGN IN 
-      </Button>
-      <p>Don’t you have an account? SIGNUP</p>  
-   </form>  
-  </Grid>  
+ <Avatar alt="Remy Sharp" src="../../Assets/Profile.png"  />
+   <button variant="contained" disabled></button>
+  </Grid> 
+  </Grid> 
+  
   );  
  }    
 }  
-export default Myform;  
+export default Myprofile;  
