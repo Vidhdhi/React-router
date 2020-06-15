@@ -1,5 +1,7 @@
 import React, {Component}from "react";
-
+import FullWidthGrid from "./signup";
+import Publiclayout from "../components/Layouts/publiclayouts";
+import { Button } from "@material-ui/core";
 class login extends React.Component {
    constructor(props){
     super(props);
@@ -8,10 +10,14 @@ class login extends React.Component {
   
  render(){
     return (
-<div>
-<h1>heloo{this.state.name}</h1>
 
-</div>
+<Publiclayout>
+<Button variant="contained" color="primary">hello bae</Button>
+
+
+</Publiclayout>
+
+
 )
  }
  }   
