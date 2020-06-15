@@ -4,12 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Myform from '../elements/form.js'
 import Mycontent from '../elements/content.js'
 
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: 'red',
-    color: props => props.color,
-  },
-});
+
 
  
 function Publiclayout(props) {

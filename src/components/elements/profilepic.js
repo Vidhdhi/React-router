@@ -3,11 +3,12 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';  
 import Avatar from '@material-ui/core/Avatar';
 import Mycontent1 from './conent3.js';
-
+import PhotoCamera from '../../Assets/camera.png';
 class Myprofile extends React.Component {  
    handleLogin = () => {  
    alert("Login form example using MATERIAL UI");  
 }  
+
 render() {  
    return (  
     <Grid container item xs={12}>
@@ -24,9 +25,17 @@ render() {
          justify="center"  
          style={{ minHeight: '100vh' }}  
          >  
- 
- <Avatar alt="Remy Sharp" src="../../Assets/Profile.png"  />
-   <button variant="contained" disabled></button>
+ <h1>profile pic</h1>
+ <Avatar style ={{width:200,height:200} }  src="../../Assets/Profile.png"  />
+ <Button
+        variant="contained"
+        color="default"
+       
+        startIcon={<PhotoCamera />}
+      >
+        Upload
+      </Button>
+   <Button variant="contained" disabled></Button>
   </Grid> 
   </Grid> 
   
