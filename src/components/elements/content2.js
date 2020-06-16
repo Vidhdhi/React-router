@@ -1,7 +1,7 @@
 import React from 'react';
 import logo1 from '../../Assets/Complete your account.png'; 
 import Grid from '@material-ui/core/Grid';  
-
+import custom from './custom.css';
 function mycontent() {
   return (
     <Grid  
@@ -11,11 +11,12 @@ function mycontent() {
     alignItems="center"  
     justify="center"  
     style={{ minHeight: '100vh' }}  
+    className ="bgcol"
     >  
       <img src={logo1} className="App-logo" alt="logo" />
         
-        <h1 className ="log">Make decisions using multiple visualizations</h1>
-        <p className ="test"> Our platform is capable of communicating data in various graphical forms for better understanding and rational decision making.</p>
+        <h1 className ="hed">Make decisions using multiple visualizations</h1>
+        <p className ="txt"> Our platform is capable of communicating data in various graphical forms for better understanding and rational decision making.</p>
         
     </Grid>
   );

@@ -10,7 +10,7 @@ import Mycontent from '../components/elements/content.js'
 function Login(props) {
   return(
 <Grid container item xs={12}>
-    <Grid item xs={6}> <Mycontent/>
+    <Grid item xs={6} className ="background"> <Mycontent/>
 </Grid>
 <Grid item xs={6}>
    <Myform/>

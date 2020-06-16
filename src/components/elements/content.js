@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../Assets/Iphone Xs-Artwork-Project_Managers.png'; 
 import Grid from '@material-ui/core/Grid';  
-
+import custom from './custom.css';
 function content() {
   return (
     <Grid  
@@ -11,11 +11,12 @@ function content() {
     alignItems="center"  
     justify="center"  
     style={{ minHeight: '100vh' }}  
+    className ="bgcol"
     >  
       <img src={logo} className="App-logo" alt="logo" />
         
-        <h1 className ="log">Standard Catalogued Data</h1>
-        <p className ="test">Large volumes of diverse data systematically categorized based on distinct criteria<br></br> for easy and effective filtering of the necessary information.</p>
+        <h1 className ="hed">Standard Catalogued Data</h1>
+        <p className ="txt">Large volumes of diverse data systematically categorized based on distinct criteria<br></br> for easy and effective filtering of the necessary information.</p>
         
     </Grid>
   );

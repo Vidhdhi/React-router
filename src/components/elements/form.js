@@ -39,7 +39,7 @@ render() {
       label="Typed text"  
       type="password"  
    />  
-   <p>Forgot password? RESET</p>
+   <p>Forgot password? <a href ="/forgetpassword">RESET</a></p>
    <Button  
       type="submit"  
       fullWidth  
@@ -48,7 +48,7 @@ render() {
       >  
      SIGN IN 
       </Button>
-      <p>Don’t you have an account? SIGNUP</p>  
+      <p>Don’t you have an account? ?<a href ="/signup">SIGNUP</a></p>  
    </form>  
   </Grid>  
   );  

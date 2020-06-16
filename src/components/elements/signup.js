@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 
 class Mysignup extends React.Component {  
    handleLogin = () => {  
-   alert("Login form example using MATERIAL UI");  
+      window.location.href = '/setprofile'; 
 }  
 render() {  
    return (  
@@ -65,16 +65,16 @@ render() {
       label="Typed text"  
       type="password"  
    />  
-   <p>Forgot password? RESET</p>
+  
    <Button  
       type="submit"  
       fullWidth  
       variant="contained"  
       color="primary"  
       >  
-     SIGN IN 
+     SIGN UP 
       </Button>
-      <p>Don’t you have an account? SIGNUP</p>  
+      <p>Don’t you have an account? <a href ="/login">SIGNIN</a></p>  
    </form>  
   </Grid>  
 
