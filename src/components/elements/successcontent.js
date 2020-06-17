@@ -1,7 +1,8 @@
 import React from 'react';  
 import Button from '@material-ui/core/Button';    
 import Grid from '@material-ui/core/Grid';  
-
+import './custom.css';
+import CheckIcon from '@material-ui/icons/Check';
 
  
 class successful extends React.Component {  
@@ -21,6 +22,8 @@ render() {
          justify="center"  
          style={{ minHeight: '100vh' }}  
          >  
+         <div className ="center">
+            <CheckIcon />
 <h1>Your account completed!</h1>
 <p>
 You can now access your dashboard using your credentials.
@@ -29,6 +32,7 @@ You can now access your dashboard using your credentials.
       fullWidth  
       variant="contained"  
       color="primary"   >Go to dashboard</Button>
+      </div>
   </Grid> 
   
   );  

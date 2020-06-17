@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';    
 import Grid from '@material-ui/core/Grid';  
 import TextField from '@material-ui/core/TextField'; 
-
+import custom from './custom.css';
  
 class Reset extends React.Component {  
    handleLogin = () => {  
@@ -20,8 +20,9 @@ render() {
          alignItems="center"  
          justify="center"  
          style={{ minHeight: '100vh' }}  
-         >  
-<h1>Forgot password</h1>
+        
+         >  <div className ="center" >
+<h1 className ="hed">Forgot password</h1>
 <label>Email</label>
    <TextField  
       variant="outlined"  
@@ -34,6 +35,7 @@ render() {
       fullWidth  
       variant="contained"  
       color="primary"   >RESET PASSWORD</Button>
+      </div>
   </Grid> 
   
   );  

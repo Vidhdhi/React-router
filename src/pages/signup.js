@@ -9,9 +9,10 @@ import Mycontent from '../components/elements/content2.js'
  
 function Signup(props) {
   return(
-<Grid container item xs={12}>
+<Grid container >
     <Grid item xs={6}> <Mycontent/>
 </Grid>
+
 <Grid item xs={6}>
    <Myform/>
 </Grid>

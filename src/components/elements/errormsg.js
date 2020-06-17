@@ -1,7 +1,7 @@
 import React from 'react';  
 import Button from '@material-ui/core/Button';    
 import Grid from '@material-ui/core/Grid';  
-
+import './custom.css';
 
  
 class successful extends React.Component {  
@@ -21,6 +21,7 @@ render() {
          justify="center"  
          style={{ minHeight: '100vh' }}  
          >  
+         <div className ="center">
 <h1>Your account creation is failed!</h1>
 <p>
 Please check your information and try again.
@@ -29,6 +30,7 @@ Please check your information and try again.
       fullWidth  
       variant="contained"  
       color="primary"   >GO BACK</Button>
+      </div>
   </Grid> 
   
   );  
