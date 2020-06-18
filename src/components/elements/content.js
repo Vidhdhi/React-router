@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../Assets/Iphone Xs-Artwork-Project_Managers.png'; 
+import logo from '../../assets/images/Iphone Xs-Artwork-Project_Managers.png'; 
 import Grid from '@material-ui/core/Grid';  
 import custom from './custom.css';
 function content() {

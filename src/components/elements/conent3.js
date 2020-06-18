@@ -1,5 +1,5 @@
 import React from 'react';
-import logo2 from '../../Assets/Set profile picture.png'; 
+import logo2 from '../../assets/images/Set profile picture.png'; 
 import Grid from '@material-ui/core/Grid';  
 import custom from './custom.css';
 function mycontent1() {
