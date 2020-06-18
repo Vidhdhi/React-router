@@ -29,7 +29,7 @@ render() {
  <Button
         variant="contained"
         color="default"
-       
+       fullWidth
         
       >
         Upload

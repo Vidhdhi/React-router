@@ -5,7 +5,8 @@ import Myprofile from "../pages/setprofile";
 import success from "../pages/success";
 import error from "../pages/eror";
 import Forgetpass from "../pages/forgetpassword";
-
+import mail from "../pages/mailres";
+import reset from "../pages/reset";
 
 const publicRouter =[ 
 {
@@ -43,5 +44,16 @@ exact:true,
     component:Forgetpass ,
          exact:true,
 },
+{
+    path:"/mailres",
+    component: mail ,
+         exact:true,
+},
+{
+    path:"/reset",
+    component: reset ,
+         exact:true,
+},
+
 ];
 export default publicRouter
