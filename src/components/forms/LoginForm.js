@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
-​
+import { Formik } from 'formik';
+import { useFormik } from 'formik';
+
 const useStyles = makeStyles((theme) =>
   createStyles({
     forgotText: {
@@ -28,37 +30,44 @@ const useStyles = makeStyles((theme) =>
     },
   })
 );
-​
+
 const LoginForm = (props) => {
   const classes = useStyles();
-​
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+    
+      email: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
-    <form className={classes.formCart}>
-      <Grid container item xs={12} sm={12} md={12} lg={12}>
-        <TextField
-          type={'email'}
-          label={'Email address'}
-          fullWidth
-        />
-      </Grid>
-      <Grid container item xs={12} sm={12} md={12} lg={12}>
-        <TextField
-          type={'password'}
-          label={'Password'}
-          placeholder={'Enter password'}
-          fullWidth
-        />
-      </Grid>
-      <Grid container item xs={12} sm={12} md={12} lg={12}>
-        <Box className={classes.forgotText}>
-          Forgot password? <Link to={'/forgot-password'}>RESET</Link>
-        </Box>
-      </Grid>
-      <Button fullWidth type={'submit'} variant="contained" color="primary">
-        Sign In
-      </Button>
+    <form onSubmit={formik.handleSubmit} className={classes.formCart}>
+      
+      <label htmlFor="firstName">First Name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
+        fullWidth
+      />
+  
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+        fullWidth
+      />
+      <Button fullWidth variant="contained" color="primary" type="submit">Submit</Button>
     </form>
   );
 };
-​
 export default LoginForm;
