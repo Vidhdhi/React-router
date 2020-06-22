@@ -48,23 +48,25 @@ const LoginForm = (props) => {
     <form onSubmit={formik.handleSubmit} className={classes.formCart}>
       
       <label htmlFor="firstName">First Name</label>
-      <input
+      <TextField
         id="firstName"
         name="firstName"
         type="text"
         onChange={formik.handleChange}
         value={formik.values.firstName}
         fullWidth
+        variant="outlined"
       />
   
       <label htmlFor="email">Email Address</label>
-      <input
+      <TextField
         id="email"
         name="email"
         type="email"
         onChange={formik.handleChange}
         value={formik.values.email}
         fullWidth
+        variant="outlined"
       />
       <Button fullWidth variant="contained" color="primary" type="submit">Submit</Button>
     </form>
