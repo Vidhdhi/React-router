@@ -56,6 +56,7 @@ const LoginForm = (props) => {
         value={formik.values.firstName}
         fullWidth
         variant="outlined"
+        placeholder='Enter Name'
       />
   
       <label htmlFor="email">Email Address</label>
@@ -67,6 +68,7 @@ const LoginForm = (props) => {
         value={formik.values.email}
         fullWidth
         variant="outlined"
+        placeholder='Enter password'
       />
       <Button fullWidth variant="contained" color="primary" type="submit">Submit</Button>
     </form>
