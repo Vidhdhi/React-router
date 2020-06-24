@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+
 import Myform from '../components/elements/signup.js'
 import Mycontent from '../components/elements/content2.js'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+
 import Mail from '../components/elements/mail.js'
 import Mycontent5 from '../components/elements/content5.js'
 
