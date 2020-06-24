@@ -3,8 +3,7 @@ import login from "../pages/login";
 import Signup from "../pages/signup";
 import Myprofile from "../pages/setprofile";
 import success from "../pages/success";
-import error from "../pages/eror";
-import Forgetpass from "../pages/forgetpassword";
+import Forgetpass from "../pages/Forgetpassword";
 import mail from "../pages/mailres";
 import reset from "../pages/reset";
 
@@ -34,11 +33,7 @@ exact:true,
     component:Myprofile ,
          exact:true,
 },
-{
-    path:"/error",
-    component:error ,
-         exact:true,
-},
+
 {
     path:"/forgetpassword",
     component:Forgetpass ,

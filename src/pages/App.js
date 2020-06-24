@@ -3,9 +3,9 @@ import React , {Component} from 'react';
 import publicRoutes from '../routes/publicRoutes'
 import {
   BrowserRouter ,
-  Switch,
+  
   Route,
-  Link
+  
 } from "react-router-dom";
 
 class App extends Component {
