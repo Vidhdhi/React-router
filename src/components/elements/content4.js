@@ -1,7 +1,7 @@
 import React from 'react';
 import logo4 from '../../assets/images/Forgot password.png'; 
 import Grid from '@material-ui/core/Grid';  
-import './custom.css';
+
 function mycontent4() {
   return (
     <Grid  

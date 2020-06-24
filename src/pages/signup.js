@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-import Myform from '../components/elements/signup.js'
+import Myform from '../components/forms/SignupForm.js'
 import Mycontent from '../components/elements/content2.js'
 
 

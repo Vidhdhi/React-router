@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';  
 import TextField from '@material-ui/core/TextField';  
 import Grid from '@material-ui/core/Grid';  
-import  './custom.css';
+
 
 class Mysignup extends React.Component {  
    handleLogin = () => {  
@@ -12,10 +12,7 @@ render() {
    return (  
 
       
-<Grid  
-
-
-         container  
+<Grid   container  
         item ={12}
          spacing={0}  
          direction="column"  

@@ -5,7 +5,7 @@ import Myprofile from "../pages/setprofile";
 import success from "../pages/success";
 import Forgetpass from "../pages/Forgetpassword";
 import mail from "../pages/mailres";
-import reset from "../pages/reset";
+import reset from "../components/forms/ResetForm";
 
 const publicRouter =[ 
 {

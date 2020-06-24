@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/images/Iphone Xs-Artwork-Project_Managers.png'; 
 import Grid from '@material-ui/core/Grid';  
-import  './custom.css';
+
 function content() {
   return (
     <Grid  

@@ -4,9 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';  
 import { makeStyles } from '@material-ui/core/styles';
 
-
-
-
 const useStyles = makeStyles((theme) => ({
    root: {
      '& > *': {
@@ -15,13 +12,7 @@ const useStyles = makeStyles((theme) => ({
      },
    },
  }));
-
-
-
-
-
-
- export default function Reset() {  
+export default function Reset() {  
    const classes = useStyles();
  
    return (  
@@ -36,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
          
          >  
  
- 
- <h1>Change password</h1>
+    <h1>Change password</h1>
    <form >  
    <label>Old password</label>
    <TextField  
