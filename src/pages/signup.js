@@ -1,23 +1,36 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
+import React, { Component } from "react";
+import PublicLayout from "../components/layouts/Publiclayouts";
+import SignupImage from '../assets/images/Complete-Account.png';
+import SignupForm from '../components/forms/SignupForm';
+import {withStyles} from "@material-ui/styles";
+const styles = (theme) => ({
+  
+  cart: {
+    maxWidth: '430px',
+    width: '100%',
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+});
+class Signup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
 
-import Myform from '../components/forms/SignupForm.js'
-import Mycontent from '../components/elements/content2.js'
-
-
-
- 
-function Signup(props) {
-  return(
-<Grid container >
-    <Grid item xs={6}> <Mycontent/>
-</Grid>
-
-<Grid item xs={6}>
-   <Myform/>
-</Grid>
-</Grid>
-  );
-}
- 
-export default Signup;
+  render() {
+    const { classes } = this.props;return (
+      <PublicLayout
+        image={SignupImage}
+        title="Make decisions using multiple visualizations"
+        text="Our platform is capable of communicating data in various graphical forms for better understanding and rational decision making."
+      >
+        <div className={classes.cart}>
+          
+          <SignupForm/>
+        </div>
+      </PublicLayout>
+    )
+  }
+}export default withStyles(styles)(Signup);

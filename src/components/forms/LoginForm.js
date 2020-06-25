@@ -1,100 +1,96 @@
-import React from "react";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import { Formik, Form } from "formik";
-
-import * as Yup from "yup";
+import React from 'react';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import InputField from '../core/Input';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     forgotText: {
-      fontSize: "14px",
-      letterSpacing: "0",
+      fontSize: '14px',
+      letterSpacing: '0',
       fontWeight: 400,
-      color: "#4E598348",
-      paddingBottom: "16px",
+      color: '#4E598348',
+      paddingBottom: '16px',
     },
     apiError: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "#ff1744",
-      fontSize: "14px",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#ff1744',
+      fontSize: '14px',
     },
     formCart: {
       maxWidth: '430px',
       width: '100%',
     },
-    Field: {
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
   })
 );
-
-const SignupSchema = Yup.object().shape({
-  password: Yup.string()
-    .min(6, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-});
 
 const LoginForm = (props) => {
   const classes = useStyles();
 
-  return (
-    <Formik
-      initialValues={{
-        password: "",
-        email: "",
-      }}
-      validationSchema={SignupSchema}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
-    >
-      {({ errors, touched,setFieldTouched }) => (
-        <Form className={classes.formCart}>
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <TextField
-              fullWidth
-              id="email"
-              name="email"
-              label="Email"
-              variant="outlined"
-              error={Boolean(errors.email) && touched.email}
-              onBlur={() => setFieldTouched('email')}
-              helperText={errors.email}
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12}>
-            <TextField
-              fullWidth
-              id="password"
-              name="password"
-              label="Password"
-              variant="outlined"
-              error={Boolean(errors.password) && touched.password}
-              onBlur={() => setFieldTouched('password')}
-              helperText={errors.password}
-            />
-          </Grid>
+  const formik = useFormik({
+    initialValues: {
+      email:props.initialValues.email,
+      password:props.initialValues.password,
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email address').required('Required'),
+      password: Yup.string()
+        .min(6, 'minimum 6 characters')
+        .required('Required'),
+    }),
+    onSubmit: (values) => {
+      console.log(values)
+    },
+  });
 
-          {/*<Field name="email" type="email" fullWidth*/}
-          {/*variant="outlined"/>*/}
-          {/*{errors.email && touched.email ? <div>{errors.email}</div> : null}*/}
-          <Button fullWidth variant="contained" color="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      )}
-    </Formik>
+  return (
+    <form onSubmit={formik.handleSubmit} className={classes.formCart}>
+      <Grid container item xs={12} sm={12} md={12} lg={12}>
+        <InputField
+          id={'email'}
+          name={'email'}
+          type={'email'}
+          label={'Email address'}
+          placeholder={'Enter email address'}
+          error={Boolean(formik.errors.email) && formik.touched.email}
+          errorMessage={formik.errors.email}
+          value={formik.values.email}
+          getValue={(vaule) => formik.setFieldValue('email', vaule)}
+          onBlur={() => formik.setFieldTouched('email')}
+        />
+      </Grid>
+      <Grid container item xs={12} sm={12} md={12} lg={12}>
+        <InputField
+          id={'password'}
+          name={'password'}
+          type={'password'}
+          label={'Password'}
+          placeholder={'Enter password'}
+          error={Boolean(formik.errors.password) && formik.touched.password}
+          errorMessage={formik.errors.password}
+          value={formik.values.password}
+          fullWidth
+          getValue={(vaule) => formik.setFieldValue('password', vaule)}
+          onBlur={() => formik.setFieldTouched('password')}
+        />
+      </Grid>
+      <Grid container item xs={12} sm={12} md={12} lg={12}>
+        <Box className={classes.forgotText}>
+          Forgot password? <Link to={'/forgot-password'}>RESET</Link>
+        </Box>
+      </Grid>
+      <Button fullWidth type={'submit'} variant="contained" color="primary">
+        Sign In
+      </Button>
+    </form>
   );
 };
+
 export default LoginForm;

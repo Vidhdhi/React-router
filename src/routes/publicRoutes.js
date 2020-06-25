@@ -1,10 +1,10 @@
-import welcome from "../pages/setprofile";
-import login from "../pages/login";
-import Signup from "../pages/signup";
-import Myprofile from "../pages/setprofile";
-import success from "../pages/success";
-import Forgetpass from "../pages/Forgetpassword";
-import mail from "../pages/mailres";
+import welcome from "../pages/App";
+import login from "../pages/Login";
+import Signup from "../pages/Signup";
+import Myprofile from "../pages/Set-Profile";
+import success from "../pages/Success-Msg";
+import Forgetpass from "../pages/Forget-Password";
+import mail from "../pages/Mail-Response";
 import reset from "../components/forms/ResetForm";
 
 const publicRouter =[ 

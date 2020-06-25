@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PublicLayout from "../components/Layouts/publiclayouts";
+import PublicLayout from "../components/layouts/Publiclayouts";
 import signinImage from '../assets/images/Signin.png';
 import logo from '../assets/logos/Logo.png';
 import LoginForm from '../components/forms/LoginForm';
