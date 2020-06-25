@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PublicLayout from "../components/layouts/Publiclayouts";
+import PublicLayout from "../components/layouts/publiclayouts";
 import SignupImage from '../assets/images/Complete-Account.png';
 import SignupForm from '../components/forms/SignupForm';
 import {withStyles} from "@material-ui/styles";
@@ -16,7 +16,16 @@ const styles = (theme) => ({
 class Signup extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      initialValues: {
+        First_name :'',
+        Last_name:'',
+        Organization:'',
+        Phone_number:'',
+        email: '',
+        password: '',
+      },
+    };
   }
 
   render() {
