@@ -1,33 +1,36 @@
-import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import React, { useState } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
 const styles = () => ({
   FormHelper: {
-    marginLeft: "0px",
+    marginLeft: '0px',
   },
   shrink: {
-    transform: "translate(0px, 0px) scale(1) !important",
-    fontSize: "16px",
+    transform: 'translate(0px, 0px) scale(1) !important',
+    fontSize: '16px',
   },
   textField: {
-    minHeight: "100px",
+    minHeight: '100px',
+    width: '100%',
   },
   inputRoot: {
-    height: "auto",
-    marginTop: "23px",
-    "& > fieldset": {
-      border: "0.75px solid #3F44511F",
-      top: "-2px",
-      bottom: "-2px",
-      "& > legend": {
-        display: "none",
+    height: 'auto',
+    marginTop: '23px',
+    '& > fieldset': {
+      border: '0.75px solid #3F44511F',
+      top: '-2px',
+      bottom: '-2px',
+      '& > legend': {
+        display: 'none',
       },
     },
   },
   input: {
-    padding: "14.5px 14px !important",
+    padding: '14.5px 14px !important',
   },
 });
+
 const InputField = ({
   classes,
   id,
@@ -39,6 +42,15 @@ const InputField = ({
   errorMessage,
   ...rest
 }) => {
+  const [value, setValue] = useState(rest.value);
+  const handleChange = (event) => {
+    const { getValue } = rest;
+    if (getValue) {
+      getValue(event.target.value);
+    }
+    setValue(event.target.value);
+  };
+
   return (
     <div className={classes.textField}>
       <TextField
@@ -46,11 +58,13 @@ const InputField = ({
         name={name}
         type={type}
         label={label}
+        value={value}
         placeholder={placeholder}
         error={error}
         helperText={error && errorMessage}
         fullWidth
         variant="outlined"
+        onChange={(event) => handleChange(event)}
         FormHelperTextProps={{
           classes: {
             root: classes.FormHelper,
@@ -73,4 +87,5 @@ const InputField = ({
     </div>
   );
 };
+
 export default withStyles(styles)(InputField);

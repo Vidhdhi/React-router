@@ -1,4 +1,4 @@
-import welcome from "../pages/App";
+import welcome from "../pages/Welcome";
 import login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Myprofile from "../pages/Set-Profile";
