@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import PublicLayout from "../components/layouts/Publiclayouts";
+import React, { Component } from 'react';
+import PublicLayout from '../components/layouts/Publiclayouts';
 import signinImage from '../assets/images/Signin.png';
 import logo from '../assets/logos/Logo.png';
 import LoginForm from '../components/forms/LoginForm';
-import {withStyles} from "@material-ui/styles";
+import { withStyles } from '@material-ui/styles';
+
 const styles = (theme) => ({
   logo: {
     width: '159px',
@@ -19,14 +20,23 @@ const styles = (theme) => ({
     flexDirection: 'column',
   },
 });
+
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      initialValues: {
+        email: '',
+        password: '',
+      },
+    };
   }
 
   render() {
-    const { classes } = this.props;return (
+    const { classes } = this.props;
+    const { initialValues } = this.state;
+
+    return (
       <PublicLayout
         image={signinImage}
         title="Standard Catalogued Data"
@@ -34,9 +44,11 @@ class Login extends Component {
       >
         <div className={classes.cart}>
           <img src={logo} alt="logo" className={classes.logo} />
-          <LoginForm/>
+          <LoginForm initialValues={initialValues} />
         </div>
       </PublicLayout>
-    )
+    );
   }
-}export default withStyles(styles)(Login);
+}
+
+export default withStyles(styles)(Login);

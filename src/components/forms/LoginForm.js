@@ -36,8 +36,8 @@ const LoginForm = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      email:props.initialValues.email,
-      password:props.initialValues.password,
+      email: props.initialValues.email,
+      password: props.initialValues.password,
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Invalid email address').required('Required'),
