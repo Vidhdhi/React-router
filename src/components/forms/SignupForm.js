@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import ButtonField from '../core/Button';
 import InputField from '../core/Input';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -163,9 +163,9 @@ const SignupForm = (props) => {
           onBlur={() => formik.setFieldTouched('password')}
         />
       </Grid>
-      <Button fullWidth type={'submit'} variant="contained" color="primary">
+      <ButtonField>
         Sign up
-      </Button>
+      </ButtonField>
       <Grid container item xs={12} sm={12} md={12} lg={12}>
         <Box className={classes.forgotText}>
         Already have an account?  <Link to={'/login'}> SIGN IN</Link>
