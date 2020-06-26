@@ -3,8 +3,8 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import InputField from '../core/Input';
+import ButtonField from '../core/Button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -86,9 +86,9 @@ const LoginForm = (props) => {
           Forgot password? <Link to={'/forgot-password'}>RESET</Link>
         </Box>
       </Grid>
-      <Button fullWidth type={'submit'} variant="contained" color="primary">
+      <ButtonField>
         Sign In
-      </Button>
+      </ButtonField>
     </form>
   );
 };
