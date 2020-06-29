@@ -6,6 +6,7 @@ import success from "../pages/Success-Msg";
 import Forgetpass from "../pages/Forget-Password";
 import mail from "../pages/Mail-Response";
 import reset from "../components/forms/ResetForm";
+import Test from "../pages/Test";
 
 const publicRouter =[ 
 {
@@ -13,6 +14,11 @@ path:"/",
 component:welcome,
 exact:true,
 },
+{
+    path:"/test",
+    component:Test,
+    exact:true,
+    },
 {
     path:"/login",
     component:login,
