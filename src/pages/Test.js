@@ -9,7 +9,9 @@ class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: ['zajith@huex.studio', 'gobi@huex.studio', 'chanthan@huex.studio']
+      usermail: ['zajith@huex.studio', 'gobi@huex.studio', 'chanthan@huex.studio'],
+      Input:'',
+    
     }
    
   }
@@ -19,7 +21,17 @@ class Test extends Component {
     
   }
   render() {
-    const { users } = this.state;
+    const Handle =(e)=>{
+
+      if (true) {
+        alert('input')
+        this.setState({
+            Input: e.target.value,
+            usermail:[...this.state.usermail,this.state.users],
+          })
+      }
+  
+  }
     return (
       <div>
         <form>
@@ -31,13 +43,17 @@ class Test extends Component {
           label={'Email address'}
           placeholder={'Enter email address'}
           onChange={this.handleChange}
-           value={users}
+           value={this.state.Input}
          />
       </Grid>
+      
       </form>
-      <ButtonField>
+      <ButtonField onClick={Handle} >
         add
       </ButtonField>
+   
+      <p> {this.state.users} </p>
+                 
       </div>
     );
   }

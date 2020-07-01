@@ -7,6 +7,7 @@ import Forgetpass from "../pages/Forget-Password";
 import mail from "../pages/Mail-Response";
 import reset from "../components/forms/ResetForm";
 import Test from "../pages/Test";
+import imageupload from "../pages/Set-Profile";
 
 const publicRouter =[ 
 {
@@ -15,11 +16,17 @@ component:welcome,
 exact:true,
 },
 {
-    path:"/test",
-    component:Test,
-    exact:true,
-    },
+path:"/test",
+component:Test,
+exact:true,
+ },
 {
+ path:"/upload",
+ component:imageupload,
+  exact:true,
+        },
+
+{  
     path:"/login",
     component:login,
     exact:true,
