@@ -1,59 +1,47 @@
 import React, { Component } from 'react';
-import InputField from '../components/core/Input';
-import ButtonField from '../components/core/Button';
-
-import Grid from '@material-ui/core/Grid';
-
+import { isEmpty } from 'lodash';
+import LodashTest from '../components/forms/lodashtest';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usermail: ['zajith@huex.studio', 'gobi@huex.studio', 'chanthan@huex.studio'],
-      Input: '',
-
-    }
-
+      userEmails: [],
+    };
   }
-
-  handleChange = (event) => {
-    this.setState({ users: event.target.value })
-
+  addEmail = (abc) => {
+    this.setState((state) => {
+      return {
+        userEmails: [...state.userEmails, abc.email],
+      };
+    });
+  };
+  deleteUserEmail(item) {
+    const newState = this.state.userEmails.slice();
+    if (newState.indexOf(item) > -1) {
+      newState.splice(newState.indexOf(item), 1);
+      this.setState({ userEmails: newState });
+    }
   }
   render() {
-    const Handle = (e) => {
-
-      if (true) {
-        alert('input')
-        this.setState({
-          Input: e.target.value,
-          usermail: [...this.state.usermail, this.state.users],
-        })
-      }
-
-    }
+    const { userEmails } = this.state;
     return (
       <div>
-        <form>
-          <Grid container item xs={6} sm={6} md={6} lg={6}>
-            <InputField
-              id={'email'}
-              name={'email'}
-              type={'email'}
-              label={'Email address'}
-              placeholder={'Enter email address'}
-              onChange={this.handleChange}
-              value={this.state.Input}
-            />
-
-          </Grid>
-        </form>
-        <ButtonField onClick={Handle} >
-          add
-      </ButtonField>
-
-        <p> {this.state.users} </p>
-
+        <LodashTest getFormValue={(values) => this.addEmail(values)} />
+        {isEmpty(userEmails) && <h1>emails not found!</h1>}
+        {!isEmpty(userEmails) &&
+          userEmails.map((item, index) => {
+            return (
+              <div>
+                {item} - {index}
+                <IconButton aria-label="delete" >
+                  <DeleteIcon  onClick={this.deleteUserEmail.bind(this, item) }/>
+                </IconButton>
+              </div>
+            );
+          })}
       </div>
     );
   }
