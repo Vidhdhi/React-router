@@ -35,7 +35,7 @@ import React from "react";
      <form onSubmit={formik.handleSubmit} className={classes.formCart}>
        <Grid container item xs={12} sm={12} md={12} lg={12}>
          <InputField
-           // ref={(c) => this.title = c}
+          
            id={"email"}
            name={"email"}
            type={"email"}
@@ -44,7 +44,7 @@ import React from "react";
            error={Boolean(formik.errors.email) && formik.touched.email}
            errorMessage={formik.errors.email}
            value={formik.values.email}
-           getValue={(vaule) => formik.setFieldValue("email", vaule)}
+           getValue={(value) => formik.setFieldValue("email", value)}
            onBlur={() => formik.setFieldTouched("email")}
          />
        </Grid>

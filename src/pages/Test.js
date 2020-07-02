@@ -35,7 +35,7 @@ class Test extends Component {
           userEmails.map((item, index) => {
             return (
               <div>
-                {item} - {index}
+                {item}
                 <IconButton aria-label="delete" >
                   <DeleteIcon  onClick={this.deleteUserEmail.bind(this, item) }/>
                 </IconButton>
