@@ -2,20 +2,15 @@ import moment from "moment";
 import MomentUtils from "@date-io/moment";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import React, { useState, useCallback } from "react";
-import { IconButton, Menu, MenuItem } from "@material-ui/core";
+import { IconButton} from "@material-ui/core";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-import "moment/locale/fr";
-import "moment/locale/ru";
+
 
 moment.locale("fr"); // it is required to select default locale manually
 
-const localeMap = {
-  en: "en",
- 
-};
 
 function MomentLocalizationExample() {
-  const [locale, setLocale] = useState("en");
+ 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedDate, handleDateChange] = useState(new Date());
 
@@ -23,16 +18,16 @@ function MomentLocalizationExample() {
     e.stopPropagation();
     setAnchorEl(e.currentTarget);
   }, []);
-
-  const selectLocale = useCallback(locale => {
-    moment.locale(locale);
-
-    setLocale(locale);
-    setAnchorEl(null);
-  }, []);
+ // const today = moment();
+  //    console.log(today.format());
+  const dateA = moment('10-01-2001', 'DD-MM-YYYY');
+  const dateB = moment('01-01-2001', 'DD-MM-YYYY');
+  
+  console.log(dateA.diff(dateB, 'days'));
+  
 
   return (
-    <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils} locale={locale}>
+    <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils} >
       <DatePicker
         value={selectedDate}
         onChange={date => handleDateChange(date)}
@@ -49,23 +44,9 @@ function MomentLocalizationExample() {
         }}
       />
 
-      <Menu
-        id="locale-menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={() => setAnchorEl(null)}
-      >
-        {Object.keys(localeMap).map(localeItem => (
-          <MenuItem
-            key={localeItem}
-            selected={localeItem === locale}
-            onClick={() => selectLocale(localeItem)}
-          >
-            {localeItem}
-          </MenuItem>
-        ))}
-      </Menu>
+     
     </MuiPickersUtilsProvider>
+    
   );
 }
 
