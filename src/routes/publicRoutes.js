@@ -8,6 +8,7 @@ import mail from "../pages/Mail-Response";
 import reset from "../components/forms/ResetForm";
 import Test from "../pages/Test";
 import imageupload from "../pages/Set-Profile";
+import momentest from "../pages/moment";
 
 const publicRouter =[ 
 {
@@ -15,6 +16,11 @@ path:"/",
 component:welcome,
 exact:true,
 },
+{
+    path:"/momentest",
+    component:momentest,
+    exact:true,
+    },
 {
 path:"/test",
 component:Test,
