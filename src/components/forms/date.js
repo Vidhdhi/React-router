@@ -40,6 +40,16 @@ function DateAndTimePickers(props) {
         }}
       />
        </Grid>
+       <InputField
+                id="date-picker-inline"
+      label="Enter date and time"
+        type="datetime-local"
+  placeholder="enter date and time"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
             <Buttons color="primary">Count days</Buttons>
 
     </form>
