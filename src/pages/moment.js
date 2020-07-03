@@ -1,5 +1,7 @@
 import React ,{Component} from 'react';
 import KeyboardDatePickerExample from '../components/forms/date';
+import ButtonField from '../components/core/Button';
+
 class momentest extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +13,14 @@ class momentest extends Component {
   render() {
     return (
       <div>
+          
         <KeyboardDatePickerExample/>
         <KeyboardDatePickerExample/>
+        
+        <ButtonField>
+       count
+      </ButtonField>
+      
         </div>
     );
   }
