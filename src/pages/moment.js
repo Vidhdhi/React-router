@@ -5,19 +5,21 @@ class UserNameVadidate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userEmails: [],
+      date: [],
     };
   }
-  
+ 
+ 
+
 render() {
-    const {userEmails} = this.state;
+    const {date} = this.state;
     return (
       <div>
         <MomentTest
           getFormValue={values => this.addEmail(values)}
         />
-        {isEmpty(userEmails) && <h1>emails not found!</h1>}
-        {!isEmpty(userEmails) && userEmails.map((item, index) => {
+        {isEmpty(date) && <h1>emails not found!</h1>}
+        {!isEmpty(date) && date.map((item, index) => {
           return (
             <div>
              {item} - {index} 
