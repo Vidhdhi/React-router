@@ -14,8 +14,7 @@ class momentest extends Component {
   render() {
     return (
       <div>
-          
-        <KeyboardDatePickerExample/>
+       
         <KeyboardDatePickerExample/>
         
         <ButtonField>
