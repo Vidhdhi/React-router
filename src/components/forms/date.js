@@ -1,68 +1,52 @@
-import moment from "moment";
-import MomentUtils from "@date-io/moment";
-import MoreIcon from "@material-ui/icons/MoreVert";
-import React, { useState, useCallback } from "react";
-import { IconButton} from "@material-ui/core";
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import { DateTimePicker } from '@material-ui/pickers';
+import InputButton from '../core/Button';
+import MomentUtils from '@date-io/moment';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import moment from 'moment';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-
-
-
-function MomentLocalizationExample() {
- 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [startDate,endDate, handleDateChange] = useState(new Date());
-
-  const handleMenuOpen = useCallback(e => {
-    e.stopPropagation();
-    setAnchorEl(e.currentTarget);
-  }, []);
- // const today = moment();
-  //    console.log(today.format());
-  const dateA = moment({startDate});
-  const dateB = moment(endDate);
-  
-  console.log(dateA.diff(dateB, 'days'));
-  
+export default function MaterialUIPickers(props) {
+    const formik = useFormik({
+    initialValues: {
+      date1: props.initialValues.date1,
+      date2: props.initialValues.date2,
+    },
+    validationSchema: Yup.object({}),
+    onSubmit: (values) => {
+      if(props.getFormValue){
+        props.getFormValue(values)
+      }
+    },
+  });
 
   return (
-    <MuiPickersUtilsProvider libInstance={moment} utils={MomentUtils} >
-      <DatePicker
-        value={startDate}
-        onChange={date => handleDateChange(date)}
-        InputProps={{
-          endAdornment: (
-            <IconButton
-              aria-label="Select locale"
-              onClick={handleMenuOpen}
-              aria-owns={anchorEl ? "locale-menu" : undefined}
-            >
-              <MoreIcon />
-            </IconButton>
-          ),
-        }}
-      />
-      <DatePicker
-        value={endDate}
-        onChange={date1 => handleDateChange(date1)}
-        InputProps={{
-          endAdornment: (
-            <IconButton
-              aria-label="Select locale"
-              onClick={handleMenuOpen}
-              aria-owns={anchorEl ? "locale-menu" : undefined}
-            >
-              <MoreIcon />
-            </IconButton>
-          ),
-        }}
-      />
-
-
-     
+    <form onSubmit={formik.handleSubmit} >
+    <MuiPickersUtilsProvider utils={MomentUtils}>
+      <Grid container justify="space-around">
+        <DateTimePicker
+          label="DateTimePicker"
+          inputVariant="outlined"
+          value={formik.values.date1}
+          onChange={value => formik.setFieldValue('date1', value)}
+          format="DD/MM/YYYY HH:mm"
+        />
+        <DateTimePicker
+          label="DateTimePicker"
+          inputVariant="outlined"
+          value={formik.values.date2}
+          onChange={value => formik.setFieldValue('date2', value)}
+          format="DD/MM/YYYY HH:mm"
+        />
+        {/* <p> {this.calculate.initialValues.sampleDate} </p> */}
+        <InputButton color="primary" type='submit'>
+          Calculate interval
+        </InputButton>
+        {/* <p> {this.formik.initialValues.date1} </p> */}
+      </Grid>
     </MuiPickersUtilsProvider>
-    
+    </form>
   );
 }
-
-export default MomentLocalizationExample;
