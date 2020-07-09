@@ -5,6 +5,7 @@ import logo from '../assets/logos/Logo.png';
 import LoginForm from '../components/forms/LoginForm';
 import { withStyles } from '@material-ui/styles';
 
+
 const styles = (theme) => ({
   logo: {
     width: '159px',
@@ -32,10 +33,11 @@ class Login extends Component {
     };
   }
 
+
   render() {
     const { classes } = this.props;
     const { initialValues } = this.state;
-
+  
     return (
       <PublicLayout
         image={signinImage}

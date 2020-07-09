@@ -4,7 +4,7 @@ import { DateTimePicker } from '@material-ui/pickers';
 import InputButton from '../core/Button';
 import MomentUtils from '@date-io/moment';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import moment from 'moment';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
