@@ -29,7 +29,9 @@ class Signup extends Component {
   }
 
   render() {
-    const { classes } = this.props; return (
+    const { classes } = this.props;
+    const { initialValues } = this.state;
+     return (
       <PublicLayout
         image={SignupImage}
         title="Make decisions using multiple visualizations"
@@ -37,7 +39,7 @@ class Signup extends Component {
       >
         <div className={classes.cart}>
 
-          <SignupForm />
+          <SignupForm initialValues={initialValues}/>
         </div>
       </PublicLayout>
     )

@@ -27,7 +27,7 @@ class Moment extends Component {
       <div>
         <MaterialUIPickers initialValues = {initialValues}
         getFormValue={values=>this.countRemain(values)}/>
-              <p>{this.state.differnt} </p>
+              <p>the days {this.state.differnt} </p>
       </div>
     );
   }
