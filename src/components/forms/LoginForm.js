@@ -6,7 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import InputField from '../core/Input';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Button from '../core/Button';
+//import Button from '../core/Button';
+import ButtonField from "../core/Button";
 const useStyles = makeStyles((theme) =>
     createStyles({
         forgotText: {
@@ -86,11 +87,11 @@ const LoginForm = (props) => {
                     onBlur={() => formik.setFieldTouched('password')}
                 />
             </Grid>
-            <Grid container item xs={12} sm={12} md={12} lg={12}>
-                <Button type={'submit'} color={'primary'}>
+
+                <ButtonField type={'submit'} color={'primary'}>
                     Login
-                </Button>
-            </Grid>
+                </ButtonField>
+
             <Grid container item xs={12} sm={12} md={12} lg={12}>
                 <Box className={classes.forgotText}>
                     Forgot password? <Link to={'/forgot-password'}>RESET</Link>
