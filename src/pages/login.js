@@ -12,6 +12,8 @@ const styles = (theme) => ({
     height: '38px',
     border: '0',
     marginBottom: '50px',
+    [theme.breakpoints.down('md')]: {
+      width: '200px',    margin: 'auto',}
   },
   cart: {
     maxWidth: '430px',
@@ -48,7 +50,7 @@ class Login extends Component {
           <img src={logo} alt="logo" className={classes.logo} />
           <LoginForm initialValues={initialValues} />
         </div>
-      </PublicLayout>
+      </PublicLayout>  
     );
   }
 }
