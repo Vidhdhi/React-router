@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import logoName from '../../assets/images/Profile.png'
 import Typography from '@material-ui/core/Typography';
 import InputButton from '../core/Button';
-
+import ImgButton from "../core/ImageButton";
 const useStyles = makeStyles((theme) =>
   createStyles({
     image:{
@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) =>
       opacity: '1',
     },
     upload: {
+
       textAlign: 'left',
       font:' SemiBold 14px/21px Poppins',
       letterSpacing: 0,
@@ -43,9 +44,10 @@ const Upload = (props) => {
       <div>
         <Typography variant="h4" className={classes.tittle} >Set profile picture</Typography>
         <img src={logoName} alt="profile"  className='classes.image' />
-        <InputButton  disabled className='' fullWidth>Upload</InputButton>
-        <InputButton variant="contained" disabled className='' fullWidth>Complete</InputButton>
-        <InputButton  className='' fullWidth>Skip</InputButton>
+
+          <ImgButton>upload</ImgButton>
+        <InputButton variant="contained" disabled className={classes.skip} fullWidth>Complete</InputButton>
+        <InputButton  className={classes.skip} fullWidth>Skip</InputButton>
       </div>
   );
 };
