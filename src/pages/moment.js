@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import MaterialUIPickers from '../components/forms/date';
 
-
 class Moment extends Component {
   constructor(props) {
     super(props);
@@ -10,24 +9,25 @@ class Moment extends Component {
       initialValues: {
         date1: new Date(),
         date2: new Date(),
-        differnt:''
+        differnt: '',
       },
     };
   }
 
-  
   countRemain = (values) => {
-   const differnt = moment(values.date1).diff(moment(values.date2),'days');
-   this.setState({differnt:differnt})
+    const differnt = moment(values.date1).diff(moment(values.date2), 'days');
+    this.setState({ differnt: differnt });
   };
   render() {
     // const {} = this.props;
     const { initialValues } = this.state;
     return (
       <div>
-        <MaterialUIPickers initialValues = {initialValues}
-        getFormValue={values=>this.countRemain(values)}/>
-              <p>the days {this.state.differnt} </p>
+        <MaterialUIPickers
+          initialValues={initialValues}
+          getFormValue={(values) => this.countRemain(values)}
+        />
+        <p>the days {this.state.differnt} </p>
       </div>
     );
   }

@@ -12,16 +12,16 @@ const styles = (theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  tittle:{
+  tittle: {
     alignItems: 'flex-start',
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'left',
-    font:' Bold 32px/40px PT Sans',
-    letterSpacing:' 0px',
+    font: ' Bold 32px/40px PT Sans',
+    letterSpacing: ' 0px',
     color: '#181D33',
-    opacity:' 1',
-  }
+    opacity: ' 1',
+  },
 });
 
 class ImageUpload extends Component {
@@ -46,7 +46,7 @@ class ImageUpload extends Component {
         text="Streaming highly reliable and accurate qualitative data from trusted sources for lucid analysis and effective decision making."
       >
         <div className={classes.cart}>
-             <ImageUpload1 initialValues={initialValues} />
+          <ImageUpload1 initialValues={initialValues} />
         </div>
       </PublicLayout>
     );

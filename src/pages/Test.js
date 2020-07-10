@@ -36,8 +36,8 @@ class Test extends Component {
             return (
               <div>
                 {item}
-                <IconButton aria-label="delete" >
-                  <DeleteIcon  onClick={this.deleteUserEmail.bind(this, item) }/>
+                <IconButton aria-label="delete">
+                  <DeleteIcon onClick={this.deleteUserEmail.bind(this, item)} />
                 </IconButton>
               </div>
             );

@@ -5,7 +5,6 @@ import logo from '../assets/logos/Logo.png';
 import LoginForm from '../components/forms/LoginForm';
 import { withStyles } from '@material-ui/styles';
 
-
 const styles = (theme) => ({
   logo: {
     width: '159px',
@@ -13,7 +12,9 @@ const styles = (theme) => ({
     border: '0',
     marginBottom: '50px',
     [theme.breakpoints.down('md')]: {
-      width: '200px',    margin: 'auto',}
+      width: '200px',
+      margin: 'auto',
+    },
   },
   cart: {
     maxWidth: '430px',
@@ -35,11 +36,10 @@ class Login extends Component {
     };
   }
 
-
   render() {
     const { classes } = this.props;
     const { initialValues } = this.state;
-  
+
     return (
       <PublicLayout
         image={signinImage}
@@ -50,7 +50,7 @@ class Login extends Component {
           <img src={logo} alt="logo" className={classes.logo} />
           <LoginForm initialValues={initialValues} />
         </div>
-      </PublicLayout>  
+      </PublicLayout>
     );
   }
 }

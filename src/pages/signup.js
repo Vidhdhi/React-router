@@ -18,13 +18,13 @@ const styles = (theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  header:{
+  header: {
     textAlign: 'center',
-    font:' Bold 26px/40px PT Sans',
-    letterSpacing:' 0px',
-    color:' #181D33',
+    font: ' Bold 26px/40px PT Sans',
+    letterSpacing: ' 0px',
+    color: ' #181D33',
     opacity: '1',
-  }
+  },
 });
 
 class UserName extends Component {
@@ -34,10 +34,10 @@ class UserName extends Component {
       initialValues: {
         email: '',
         password: '',
-        FirstName:'',
-        LastName:'',
-        Organization:'',
-        PhoneNumber:'',
+        FirstName: '',
+        LastName: '',
+        Organization: '',
+        PhoneNumber: '',
       },
     };
   }
@@ -47,17 +47,17 @@ class UserName extends Component {
     const { initialValues } = this.state;
 
     return (
-        <PublicLayout
-            image={signinImage}
-            title="Make decisions using multiple visualizations"
-            text="Our platform is capable of communicating
+      <PublicLayout
+        image={signinImage}
+        title="Make decisions using multiple visualizations"
+        text="Our platform is capable of communicating
          data in various graphical forms for better understanding and rational decision making."
-        >
-          <div className={classes.cart}>
-            <h1  className={classes.header} >Complete your account</h1>
-            <UserNameForm initialValues={initialValues} />
-          </div>
-        </PublicLayout>
+      >
+        <div className={classes.cart}>
+          <h1 className={classes.header}>Complete your account</h1>
+          <UserNameForm initialValues={initialValues} />
+        </div>
+      </PublicLayout>
     );
   }
 }
